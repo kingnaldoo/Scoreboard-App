@@ -18,12 +18,6 @@ export function Home() {
 		setPoint2(0);
 	}
 
-	function resetAll() {
-		resetPoints();
-		setGame1(0);
-		setGame2(0);
-	}
-
 	function setGame() {
 		if (point1 > point2) {
 			setGame1(game1 + 1);
@@ -90,7 +84,7 @@ export function Home() {
 			<ResetScore>
 				<ViewRow>
 					<Icon name='restore' size={20} color="#000000"/>
-					<Time onPress={resetAll}>Voltar pontuação</Time>
+					<Time onPress={resetPoints}>Voltar pontuação</Time>
 				</ViewRow>
 			</ResetScore>
 
