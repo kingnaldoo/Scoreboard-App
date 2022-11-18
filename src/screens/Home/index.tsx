@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Container, Divider, NomeJogador, Placar, ResetScore, StartGame, TextPlacar1, TextPlacar2, Time, TimeView, Title, ViewPlacar, ViewRow } from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Text, View } from 'react-native';
@@ -16,6 +16,10 @@ export function Home() {
 	function resetPoints() {
 		setPoint1(0);
 		setPoint2(0);
+	}
+
+	function resetAll() {
+		resetPoints();
 		setGame1(0);
 		setGame2(0);
 	}
@@ -23,6 +27,9 @@ export function Home() {
 	function setGame() {
 		if (point1 > point2) {
 			setGame1(game1 + 1);
+		} else if (point1 === point2){
+			setGame1(game1 + 1);
+			setGame2(game2 + 1);
 		} else {
 			setGame2(game2 + 1);
 		}
@@ -83,7 +90,7 @@ export function Home() {
 			<ResetScore>
 				<ViewRow>
 					<Icon name='restore' size={20} color="#000000"/>
-					<Time onPress={resetPoints}>Voltar pontuação</Time>
+					<Time onPress={resetAll}>Voltar pontuação</Time>
 				</ViewRow>
 			</ResetScore>
 
