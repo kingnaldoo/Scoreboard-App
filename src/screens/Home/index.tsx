@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Container, Divider, NomeJogador, Placar, ResetScore, StartGame, TextPlacar1, TextPlacar2, Time, TimeView, Title, ViewPlacar, ViewRow } from './styles';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from '@expo/vector-icons/MaterialIcons';
 import { Text, View } from 'react-native';
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 
